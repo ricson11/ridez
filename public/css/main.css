@@ -1,0 +1,262 @@
+body, html{
+      margin:0;
+      padding:0;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      
+}
+#head{
+    background: black;
+}
+
+#header{
+      background:gold;
+      padding:15px;
+      box-shadow: 0px 2px 2px grey;
+}
+.carousel-item img{
+     height:50vh;
+}
+#btnItem{
+    background: gold;
+    font-weight: bold;
+}
+.fa-instagram{
+   color:purple;
+   font-weight: bold;
+}
+.fa-twiiter{
+    color:aqua;
+    font-weight:bold;
+}
+.fa-whatsapp{
+    font-weight: bold;
+}
+
+.logo{
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+    
+}
+/* OUTER CONTAINER */
+.tcontainer {
+    width: 100%;
+    overflow: hidden; /* Hide scroll bar */
+  }
+   
+  /* MIDDLE CONTAINER */
+  .ticker-wrap {
+    width: 100%;
+    padding-left: 100%; /* Push contents to right side of screen */
+   /* background-color: ghostwhite;*/
+  }
+  
+  /* INNER CONTAINER */
+  @keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+  }
+  .ticker-move {
+    /* Basically move items from right side of screen to left in infinite loop */
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: ticker;
+    animation-duration: 20s;
+  }
+  .ticker-move:hover{
+    animation-play-state: paused; /* Pause scroll on mouse hover */
+  }
+  
+  /* ITEMS */
+  .ticker-item{
+    display: inline-block; /* Lay items in a horizontal line */
+    padding: 0 2rem;
+  }
+
+  .carousel-caption h5{
+      font-weight: bold;
+  }
+  .carousel-indicators button{
+      background: gold !important;
+      border-radius: 100%;
+      font-size:3px !important;
+  }
+
+  .carousel-control-prev{
+      font-weight: bold;
+  }
+
+   #description{
+       font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   }
+    
+   .card{
+      position: relative;
+      background: ghostwhite;
+      box-shadow: 0px 2px 2px grey;
+   }
+   .new{
+       position: absolute;
+       top:0.1em;
+       left:1em;
+       background: gold;
+       border-radius: 5px;
+       color: black;
+       padding:3px;
+   }
+    
+   .price{
+        color: gold;
+        font-weight: bold;
+   }
+   #products{
+       font-weight: bold;
+   }
+   .card img{
+       border-radius: 5px;
+       height:250px;
+   }
+
+  #rowTitle{
+      font-weight: bold;
+      text-align: center;
+  }
+ 
+  #break{
+    background: gold;
+    width:100px;
+    text-align:center;
+     box-shadow: 0px 2px 2px grey;
+     margin: auto;
+  }
+  .break{
+    font-weight:bold;
+    animation: blinker 2s linear infinite;
+
+  }
+ @keyframes blinker{
+  50%{
+    opacity: 0;
+  }
+  }
+  #proAd{
+    height: 15vh;
+    background: grey;;
+    box-shadow: 0px 2px 2px white;
+     }
+     .texto{
+       padding:2.5em;
+       color: white;
+     }
+      .texto{
+       font-weight:bold;
+       animation: blinker 2s linear infinite;
+   
+     }
+    @keyframes blinker{
+     50%{
+       opacity: 0;
+     }
+     }
+     
+  
+  /* WRAPPER */
+.tickerv-wrap {
+  background: ghostwhite;
+    border-top: 1px solid ghostwhite;
+    border-bottom: 1px solid ghostwhite;
+
+    box-sizing: content-box;
+    height: 25px; /* Take note of this */
+    overflow: hidden; /* Hide scrollbars */
+    padding: 10px;
+  } 
+  
+  /* TICKER ANIMATION */
+  @keyframes tickerv {
+    0%   {margin-top: 0;}
+    /* Quite literally -ve height of wrapper */
+    25%  {margin-top: -26px;} /* 1 X 25 px */
+    50%  {margin-top: -52px;} /* 2 X 25 px */
+    75%  {margin-top: -78px;} /* 3 X 25 px */
+    100% {margin-top: 0;} /* Back to first line */
+  }
+  .tickerv-wrap ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    animation-name: tickerv; /* Loop through items */
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, 0, .5, 0);
+  }
+  .tickerv-wrap ul:hover {
+    /* Pause on mouse hover */
+    animation-play-state: paused;
+  }
+  
+  /* ITEMS */
+  .tickerv-wrap ul li {
+    font-size: 18px;
+    line-height: 26px /* Same as wrapper height */
+  }
+
+  .scroll{
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  .scroll img{
+    border-radius: 5px;
+  }
+  #scrollTitle{
+      font-weight: bold;
+  }
+  #footer{
+      min-height:20vh;
+      padding: 10px;
+  }
+  .des{
+      color: gold;
+  }
+  #foot2 a{
+      text-decoration: none;
+      display: block;
+      color: white;
+      padding:8px;
+  }
+  
+  .card-title a{
+      text-decoration: none;
+  }
+  #footer h5{
+      color: gold;
+  }
+  .dot{
+      color:gold;
+      font-weight: bold;
+  }
+ 
+  @media screen and (max-width: 576px){
+    .carousel-item img{
+        height:18vh;
+        border-radius: 5px;
+   }
+   .carousel-caption p{
+       display:none;
+   }
+   #cart{
+       display:none;
+   }
+   
+   
+  }
+
+  @media screen and (max-width: 768px){
+    #description{
+        display:none;
+    }
+  }

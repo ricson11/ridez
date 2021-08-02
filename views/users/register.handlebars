@@ -1,0 +1,98 @@
+{{>_msg}}
+  <div class="container mt-4">
+   <a href="/" class="text-dark"id="mainLink"><h5 class="text-center">RIDEX <i class="fa fa-shopping-cart"></i></h5></a>
+
+  </div>
+<div class="container mt-5 p-3" id="regContainer">
+    <h5 class="text-center">Register</h5>
+    <form action="/register" method="POST">
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control"  value="{{username}}" required>
+    </div>
+     <div class="form-group">
+         <label>Whatsapp Number</label>
+        <input type="tel" name="mobile" class="form-control" value="{{mobile}}" placeholder="e.g +2349023222328" required>
+    </div>
+     <div class="form-group">
+         <label>Email</label>
+        <input type="email" name="email" class="form-control" value="{{email}}"required>
+    </div>
+     <div class="form-group">
+         <label>Password</label>
+        <input type="password" name="password" class="form-control" value="{{password}}" required>
+    </div>
+     <div class="form-group">
+         <label for="password2">Confirm Password</label>
+        <input type="password" name="password2" id="password2" class="form-control" value="{{password2}}" required>
+    </div>
+   <div class="form-group">
+       <button class="btn btn-success d-block mx-auto" id="regBtn">Register</button>
+   </div>
+   <p class="p-2 text-center"> By clicking the "register" button, you agree to Ridex's <a href="/disclaimer">terms of acceptable use </a></p>
+    </form>
+</div>
+<div class="container mt-2">
+ <p class="text-center">Already have an account? <a href="/login" id="regLink">Login</a></p>
+
+</div>
+<p class="sup mb-3"><a href="/support" id="">? Support </a></p>
+<style>
+    body{
+        background: gold;
+    }
+    .form-group{
+        padding:5px;
+    }
+    #mainLink{
+        text-decoration: none;
+    }
+    #regBtn{
+        width:25vw;
+        padding:10px;
+      margin-top: 10px;
+
+    }
+    .sup a{
+        color:white;
+        text-decoration: none;
+    }
+    label{
+        padding:5px;
+    }
+    #regLink{
+        text-decoration: none;
+        
+    }
+    #regContainer{
+        width:30vw;
+        background: ghostwhite;
+        border-radius: 5px;
+    }
+    #regContainer a{
+        text-decoration: none;
+    }
+    .sup{
+        background: black;
+        color:gold;
+        border-radius: 5px;
+        width: 7em;
+        text-align: center;
+        padding:5px;
+        margin:auto;
+        
+        
+    }
+
+    @media screen and (max-width:576px){
+        #regContainer{
+        width:85vw;
+        background: ghostwhite;
+    }
+     #regBtn{
+        width:65vw;
+        padding:10px;
+        margin-top: 10px;
+    }
+    }
+</style>

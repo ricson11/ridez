@@ -1,0 +1,35 @@
+{
+  "name": "rides",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dez",
+  "license": "ISC",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "async": "^3.2.0",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.0.2",
+    "ckeditor": "^4.12.1",
+    "cloudinary": "^1.26.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.4.1",
+    "dayjs": "^1.10.6",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.6.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.13.3",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.6.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "popper.js": "^1.16.1"
+  }
+}

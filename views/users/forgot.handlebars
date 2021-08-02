@@ -1,0 +1,84 @@
+{{>_msg}}
+  <div class="container mt-4">
+   <a href="/" class="text-dark"id="mainLink"><h5 class="text-center">RIDEX <i class="fa fa-shopping-cart"></i></h5></a>
+
+  </div>
+<div class="container mt-5 p-3" id="regContainer">
+    <h5 class="text-center">Enter account email</h5>
+    <form action="/forgot" method="POST">
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control">
+    </div>
+    
+    
+   <div class="form-group">
+       <button class="btn btn-success d-block mx-auto" id="regBtn">Send Reset Link</button>
+   </div>
+    </form>
+</div>
+<div class="container mt-2">
+ <p class="text-center">New to Ridex? <a href="/register" id="regLink">Register</a></p>
+ <p class="text-center"> Already have an account? <a href="/login" id="regLink">Login</a></p>
+
+</div>
+<p class="sup mb-3"><a href="/support" id="">? Support </a></p>
+<style>
+    body{
+        background: gold;
+    }
+    .form-group{
+        padding:5px;
+    }
+    #mainLink{
+        text-decoration: none;
+    }
+    #regBtn{
+        width:25vw;
+        padding:10px;
+      margin-top: 10px;
+
+    }
+     .sup a{
+        color:white;
+        text-decoration: none;
+    }
+    label{
+        padding:5px;
+    }
+    #regContainer{
+        width:30vw;
+        background: ghostwhite;
+        border-radius: 5px;
+    }
+    #regContainer a{
+        text-decoration: none;
+    }
+    .sup{
+        background: black;
+        color:gold;
+        border-radius: 5px;
+        width: 7em;
+        text-align: center;
+        padding:5px;
+        margin:auto;
+       
+        
+    }
+     #regLink{
+        text-decoration: none;
+        
+    }
+
+    @media screen and (max-width:576px){
+        #regContainer{
+        width:85vw;
+        background: ghostwhite;
+    }
+     #regBtn{
+        width:65vw;
+        padding:10px;
+        margin-top: 10px;
+    }
+    }
+</style>

@@ -1,0 +1,99 @@
+ {{>_msg}}
+  <div class="container mt-4">
+   <a href="/" class="text-dark"id="mainLink"><h5 class="text-center">RIDEX <i class="fa fa-shopping-cart"></i></h5></a>
+
+  </div>
+<div class="container mt-5 p-3" id="regContainer">
+    <h5 class="text-center">Add Item</h5>
+    <form action="/item" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control" required="required" value="{{title}}" placeholder="Keep the title short e.g Gucci hand bag">
+    </div>
+     <div class="form-group">
+         <label>Item Image</label>
+        <input type="file" name="image" class="form-control" required="required">
+    </div>
+     <div class="form-group">
+        <label>Price</label>
+        <input type="number" name="price" placeholder="e.g 500" class="form-control" required="required" value="{{price}}">
+   
+    </div>
+     <div class="form-group">
+         <label>Description (Optional)</label>
+         <textarea name="description" class="form-control" rows="5">{{description}}</textarea>
+    </div>
+      <div class="form-group">
+         <label>Tags (Optional)</label>
+        <input type="text" name="tags" class="form-control" placeholder="jean, polo, boxer" >
+    </div>
+   <div class="form-group">
+       <button class="btn btn-success d-block mx-auto" type="submit" id="regBtn">Add Item</button>
+   </div>
+   <p class="p-2 text-center"> By clicking the "add item" button, your item will be available for users to see.</p>
+    </form>
+</div>
+<div class="container mt-2">
+ <p class="text-center"> <a href="/" id="regLink">Homepage</a></p>
+
+</div>
+<p class="sup mb-3"><a href="" id="">? Support </a></p>
+<style>
+    body{
+        background: gold;
+    }
+    .form-group{
+        padding:5px;
+    }
+    #mainLink{
+        text-decoration: none;
+    }
+    #regBtn{
+        width:25vw;
+        padding:10px;
+      margin-top: 10px;
+
+    }
+    .sup a{
+        color:white;
+        text-decoration: none;
+    }
+    label{
+        padding:5px;
+    }
+    #regLink{
+        text-decoration: none;
+        
+    }
+    #regContainer{
+        width:30vw;
+        background: ghostwhite;
+        border-radius: 5px;
+    }
+    #regContainer a{
+        text-decoration: none;
+    }
+    .sup{
+        background: black;
+        color:gold;
+        border-radius: 5px;
+        width: 7em;
+        text-align: center;
+        padding:5px;
+        margin:auto;
+        
+        
+    }
+
+    @media screen and (max-width:576px){
+        #regContainer{
+        width:85vw;
+        background: ghostwhite;
+    }
+     #regBtn{
+        width:65vw;
+        padding:10px;
+        margin-top: 10px;
+    }
+    }
+</style>

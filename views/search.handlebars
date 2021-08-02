@@ -1,0 +1,148 @@
+      {{>_header}}
+      {{>_msg}}
+<div class="container-fluid" id="break">
+  <p class="break">Breaking</p>
+</div>
+
+ <div class="tcontainer mt-3">
+        <div class="ticker-wrap">
+            <div class="ticker-move">
+                <div class="ticker-item">You can now whatsapp seller direct from our site<span class="dot">.</span></div>
+                <div class="ticker-item">We are now the best plaform for trading in Nigeria<span class="dot">.</span></div>
+                <div class="ticker-item">You can now email seller with product details direct from our site<span class="dot">.</span></div>
+                <div class="ticker-item">We now support 24*7 customer service to our users<span class="dot">.</span></div>
+                <div class="ticker-item">More product are now listed in our site<span class="dot">.</span></div>
+           </div>
+        </div>
+    </div>
+
+<div class="container-fluid my-4">
+    <form action="/search">
+    <div class="input-group">
+    <input type="search" name="query" class="form-control " placeholder="Search item...">
+     <div class="input-group-append">
+         <button class="btn" id="btnItem" type="submit">Search item</button>
+     </div>
+    </div>
+    </form>
+</div>
+
+
+  
+<div class="container mb-5">
+       {{#if search}}
+  <h5 class="text-center my-4" id="products">Search results for {{query}}</h5>
+       {{ else }}
+ <h5 class="text-center my-4" id="products">Search results for {{query}} not found</h5>
+       {{/if}}
+   <div class="card-group">
+     {{#each search}}
+     <div class="card mx-1">
+       <p class="new">New</p>
+      <a href="/item/{{_id}}"> <img class="card-img-top" id="firstImg" src="{{image}}"></a>
+       <div class="card-body">
+         <h5 class="card-title text-center">{{title}} <span class="price"> N{{price}}</span></h5>
+         <p class="card-title text-center"><a href="/item/{{_id}}">Contact seller</a></p>
+       </div>
+     </div>
+     {{/each}}
+    
+     </div>
+
+   <!--another-->
+  
+</div>
+
+
+<div class="container mb-5">
+  <h5 class="text-center my-4" id="products">New Products</h5>
+   <div class="card-group">
+     {{#each items}}
+     <div class="card mx-1">
+       <p class="new">New</p>
+      <a href="/item/{{_id}}"> <img class="card-img-top" id="firstImg" src="{{image}}"></a>
+       <div class="card-body">
+         <h5 class="card-title text-center">{{title}} <span class="price"> N{{price}}</span></h5>
+         <p class="card-title text-center"><a href="/item/{{_id}}">Contact seller</a></p>
+       </div>
+     </div>
+     {{/each}}
+    
+     </div>
+
+   <!--another-->
+    <div class="card-group mt-3">
+      {{#each items1}}
+     <div class="card mx-1">
+       <p class="new">New</p>
+      <a href="/item/{{_id}}"><img class="card-img-top" id="firstImg" src="{{image}}"></a>
+       <div class="card-body">
+         <h5 class="card-title text-center">{{title}} <span class="price"> N{{price}}</span></h5>
+         <p class="card-title text-center"><a href="/item/{{_id}}">Contact seller</a></p>
+       </div>
+     </div>
+     {{/each}}
+   </div>
+</div>
+
+<div class="container mb-4  text-center" id="proAd">
+  <p class="texto">Advertise your product here</p>
+ </div>
+
+
+<div class="container mb-4">
+  <div class="row">
+    <div class="col-sm-4">
+      <h5 class="text-center my-3" id="rowTitle">Recent Products</h5>
+  
+       {{#each recent}}
+     <div class="card mt-2">
+      <a href="/item/{{_id}}"> <img class="card-img-top" id="firstImg" src="{{image}}"></a>
+       <div class="card-body">
+         <h5 class="card-title text-center">{{title}}<span class="price"> N{{price}}</span></h5>
+         <p class="card-title text-center"><a href="/item/{{_id}}">Contact seller</a></p>
+       </div>
+     </div>
+     {{/each}}
+   
+    </div>
+      <div class="col-sm-4">
+      <h5 class="text-center my-3" id="rowTitle">Popular Products</h5>
+         {{#each popular}}
+     <div class="card mt-2">
+      <a href="/item/{{_id}}"><img class="card-img-top" id="firstImg" src="{{image}}"></a>
+       <div class="card-body">
+         <h5 class="card-title text-center">{{title}} <span class="price"> N{{price}}</span></h5>
+         <p class="card-title text-center"><a href="/item/{{_id}}">Contact seller</a></p>
+       </div>
+     </div>
+     {{/each}}
+    </div>
+      <div class="col-sm-4">
+      <h5 class="text-center my-3" id="rowTitle">Sponsor Products</h5>
+             {{#each items}}
+     <div class="card mt-2 ">
+      <a href="/item/{{_id}}"><img class="card-img-top" id="firstImg" src="{{image}}"></a>
+       <div class="card-body">
+         <h5 class="card-title text-center">{{title}}<span class="price"> N{{price}}</span></h5>
+         <p class="card-title text-center"><a href="/item/{{_id}}">Contact seller</a></p>
+       </div>
+     </div>
+     {{/each}}
+     
+    </div>
+  </div>
+</div>
+
+<div class="container my-4">
+  <h5 class="text-center mt-2 mb-4" id="scrollTitle"> Products you may also like</h5>
+<div class="scroll">
+    {{#each others}}
+   <a href="/item/{{_id}}"><img class="" src="{{image}}" width="200px" height="150px"></a>
+     {{/each}}
+
+</div>
+</div>
+
+   {{>_footer}}
+

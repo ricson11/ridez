@@ -1,0 +1,66 @@
+{{>_header}}
+  {{>_msg}}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6 text-center mb-3">
+            <div class="card">
+                <div class="card-header">
+            <h5 id="proHead">My profile</h5>
+
+                </div>
+                <div class="card-body">
+             <p class="card-text">Name: {{user.username}}</p>
+            <p class="card-text">Mobile: +{{user.mobile}}</p>
+            <p class="card-text">Email: {{user.email}}</p>
+         <p class="card-text">Registered Date: {{formatTime user.createdAt}}</p>
+
+                </div>
+                <div class="card-footer">
+          <p id="edit"><a href="/edit/user/{{user._id}}">Edit <i class=" fa fa-edit"></i></a></p>
+                </div>
+            </div>
+            
+        </div>
+         <div class="col-md-6 ">
+            <div class="container">
+                <div class="card card-header">
+                    {{#if items}}
+             <h5 class=" bigi text-center my-3" id="proHead" >My Items</h5>
+                  {{ else }}
+          <h5 class=" bigi text-center my-3" id="proHead" >My Items</h5>
+                  <p class="text-center"> No item yet</p>
+                  {{/if}}
+               </div>
+                 {{#each items}}
+                  <div class="card my-3">
+                     
+       <img class="card-img-top" id="firstImg" src="{{image}}">
+       <div class="card-body">
+       <h5 class="card-title text-center"> <a href="/item/{{_id}}">{{title}} </a><span class="price"> N{{price}}</span></h5>
+              <p class="card-title text-center"><a href="/profile/{{_id}}">By {{username}}</a></p>
+
+      </div>
+        <div class="card-footer d-flex justify-content-around">
+          <p id="edit"><a href="/edit/item/{{_id}}">Edit <i class=" fa fa-edit"></i></a></p>
+          <p id="delete"><a href=" /delete/item/{{_id}}" class="text-danger"> Delete <i class="fa fa-trash"></i></a></p>
+
+       </div>
+     </div>
+      {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #proHead{
+        color:goldenrod
+    }
+    #delete{
+       
+        font-size:1.2em;
+    }
+     #edit{
+       
+        font-size:1.2em;
+    }
+</style>
