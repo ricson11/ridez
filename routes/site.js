@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 require('../models/Item');
 require('../models/User');
+const { checkUser, checkAdmin, checkVerified} = require('../helpers/auth');
 
 
 router.get('/', async(req, res)=>{
@@ -44,6 +45,11 @@ router.get('/search', async(req, res)=>{
 
 
 
+//admin only 
 
+router.get('/admin', checkAdmin, async(req, res)=>{
+    let users = await User.find({})
+    res.render('admin', {users})
+});
 
 module.exports = router;

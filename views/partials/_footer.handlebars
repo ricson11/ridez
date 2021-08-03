@@ -11,7 +11,9 @@
         <a href="">Privacy Policy</a>
          <a href="">Site Map</a>
       <a href="">Company</a>
-
+      {{#if user.isAdmin}}
+      <a href="/admin" class='text-danger'>Admin</a>
+        {{/if}}
     </div>
      <div class="col-sm-4" id="foot3">
       <h5>Contact</h5>
@@ -20,5 +22,7 @@
       <p>ridex@gmail.com</p>
     </div>
   </div>
+   <a href="#top" class="topArrow"><p class="d-flex justify-content-end"><i class="fa fa-arrow-up"></i></p></a>
+
    <p class="mt-3">ridex &copy; 2021. All rights reserved. Designed by <span class="des">Destech </span></p>
 </div>

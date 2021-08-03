@@ -1,0 +1,20 @@
+{{>_header}}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="text-center">Users</h5>
+                     </div>
+                     {{#each users}}
+                    <div class="card-body">
+                        <h5 class="card-title text-center"> Username: <span class="text-danger">{{username}}</span></h5>
+                     <h5 class="card-title text-center"> Id: <a href="/adminlogin/{{_id}}"><span class="text-danger">{{_id}}</span></a></h5>
+ 
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+{{>_footer}}

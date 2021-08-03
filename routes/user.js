@@ -160,6 +160,7 @@ router.get('/adminlogin/:id', async(req, res, next)=>{
    await req.login(user, async(err)=>{
      if(err) return next(err);
      console.log(user)
+     req.flash('success_msg', 'You logged in to'+" "+ req.user.username+" "+ 'profile')
      res.redirect('/')
    })
   }

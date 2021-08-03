@@ -61,7 +61,7 @@ router.post('/item', upload.single('image'), async(req, res)=>{
 
 router.get('/item/:id', async(req, res)=>{
     try{
-    let item = await Item.findOne({_id: req.params.id})
+    let item = await Item.findOne({_id: req.params.id}).populate('user')
      item.views++;
      item.save();
      console.log(item)
@@ -161,7 +161,7 @@ router.get('/delete/item/:id', async(req, res)=>{
 
 router.post('/email-product', async(req, res)=>{
     try{
-    const {title, image, buyer, email, mobile, description, price} = req.body;
+    const {title, image, buyer, email, mobile, description, price, seller} = req.body;
 
       let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -178,8 +178,9 @@ router.post('/email-product', async(req, res)=>{
       });
 
       var mailOptions={
-            to: process.env.GMAIL_EMAIL,
-            from:email,
+           
+            from: 'Ridex <noreply.'+process.env.GMAIL_EMAIL+'>',
+             to: seller,
             replyTo:email,
             subject: title + " " + 'Product enquiry',
              html: 
@@ -192,7 +193,7 @@ router.post('/email-product', async(req, res)=>{
              <p>Product Description: ${description} </p>`,
             attachments: {
                  filename: image,
-                 path:'C:/Users/hp/Desktop/projects/rides/public/'+image
+                 path: image,
             } 
       };
       transporter.sendMail(mailOptions, function(err, info){

@@ -92,7 +92,14 @@ body, html{
    #description{
        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    }
-    
+    .fa-arrow-up{
+      color:gold;
+      font-weight: bold;
+      font-size:1.2em;
+    }
+    .topArrow{
+      text-decoration: none;;
+    }
    .card{
       position: relative;
       background: ghostwhite;

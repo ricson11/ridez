@@ -21,12 +21,12 @@
          <h5 class="card-title text-center"> <a href="/item/{{item.id}}">{{item.title}}</a> <span class="price"> N{{item.price}}</span></h5>
          <p class="card-title text-center">Description: </p>
          <p>{{item.description}}</p>
-        {{#if item.tags}} <p>Tags: {{item.tags}}</p> {{/if}}
+      
 
        </div>
        <div class="card-footer d-flex justify-content-around">
           <p id="mail">email seller</p>
-          <p id="what"><a href="whatsapp://send?text=Hi! enquiry on product, {{item.title}}, Price: N{{item.price}}, Description: {{item.description}} &phone=+{{user.mobile}}">whatsapp <i class="fa fa-whatsapp"></i></a></p>
+          <p id="what"><a href="whatsapp://send?text=Hi! enquiry on product, {{item.title}}, Price: N{{item.price}}, Description: {{item.description}} &phone=+{{item.user.mobile}}">whatsapp <i class="fa fa-whatsapp"></i></a></p>
 
        </div>
      </div>
@@ -55,7 +55,8 @@
      <div class="form-group">
          <label >Price</label>
         <input type="number" name="price" id="disable1" class="form-control" value="{{item.price}}">
-    </div>
+       </div>
+
         <input type="text" name="image" id="pImage" class="form-control" value="{{item.image}}">
         <div class="form-group" id="pImages">
         <label>Product image</label><br>
@@ -65,6 +66,8 @@
          <label>Description </label>
          <textarea name="description" id="disable2" class="form-control" rows="5">{{item.description}}</textarea>
     </div>
+  <input type="email" name="seller" class="" id="sellerEmail" value="{{item.user.email}}">
+
    <div class="form-group">
        <button class="btn btn-success d-block mx-auto" id="regBtn">Send</button>
    </div>
@@ -98,7 +101,12 @@
 
 
 <style>
-   
+     
+     #sellerEmail{
+          background: gold;
+          border: none;
+          color:gold;
+     }
     #pImage{
       background: gold;
       color:gold;
@@ -196,7 +204,7 @@
     var remove = document.getElementById('remove');
      var mail = document.getElementById('mail');
      var support = document.getElementById('sup');
-  
+
       mail.addEventListener('click', function(){
           container.style.display = 'block';
           home.style.display = 'block';
@@ -221,12 +229,18 @@
     var image = document.getElementById('pImage');
    var disable1 = document.getElementById('disable1');
     var disable2 = document.getElementById('disable2');
-   
+  var sell = document.getElementById('sellerEmail');
+
 
 image.addEventListener('mousedown', function(e){
     e.preventDefault();
 });
 
+
+
+sell.addEventListener('mousedown', function(e){
+    e.preventDefault();
+});
  
 
 disable.addEventListener('mousedown', function(e){

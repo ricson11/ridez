@@ -16,7 +16,7 @@ module.exports={
 
  checkAdmin: async function (req, res, next){
      try{
-     if(req.user.isAdmin || req.user.superAdmin){
+     if(req.user.isAdmin){
         return next();
 
      }else{
@@ -26,8 +26,8 @@ module.exports={
     }
     catch(err){
         console.log(err.message)
-        res.redirect('/500');
-    }
+        req.flash('error_msg', 'Unauthorized access!');
+        res.redirect('back');    }
  },
  
 
