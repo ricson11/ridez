@@ -249,7 +249,7 @@ body, html{
  
   @media screen and (max-width: 576px){
     .carousel-item img{
-        height:18vh;
+        height:20vh;
         border-radius: 5px;
    }
    .carousel-caption p{
