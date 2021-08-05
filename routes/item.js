@@ -66,7 +66,7 @@ router.get('/item/:id', async(req, res)=>{
      item.save();
      console.log(item)
      let q = new RegExp(item.title, 'i')
-     let similar = await Item.find({$or:[{title:q}, {description:q}], _id:{$nin:item.id}})
+     let similar = await Item.find({$or:[{title:q}], _id:{$nin:item.id}})
      .sort({createdAt:-1}).limit(5)
     res.render('items/show', {item, similar, title: `${item.title} - Ridex`})
     }
